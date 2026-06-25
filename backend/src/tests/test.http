@@ -1,0 +1,46 @@
+### Health check
+
+GET http://localhost:3000/health
+
+### Register check
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "firstname" : "Skander",
+  "lastname" : "Saafi",
+  "email" : "tes@gmail.com",
+  "password" : "12345678",
+  "username" : "skander"
+}
+
+
+### Login Check
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email" : "tes@gmail.com",
+  "password" : "12345678"
+}
+
+### Profile Public Check
+GET http://localhost:3000/api/users/skander
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2QxMGM3NWViYmVmYmJiNTg5ODA5YSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3ODI0MDczMjYsImV4cCI6MTc4NDk5OTMyNn0.18XN6I6gIr3P6KsHysXjBp8qkmyyLa6EnyGd5bSF0mM
+
+### Profile Private Check
+GET http://localhost:3000/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2QxMGM3NWViYmVmYmJiNTg5ODA5YSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3ODI0MDczMjYsImV4cCI6MTc4NDk5OTMyNn0.18XN6I6gIr3P6KsHysXjBp8qkmyyLa6EnyGd5bSF0mM
+
+### Upload avatar
+POST http://localhost:3000/api/users/avatar
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2QxMGM3NWViYmVmYmJiNTg5ODA5YSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3ODI0MDczMjYsImV4cCI6MTc4NDk5OTMyNn0.18XN6I6gIr3P6KsHysXjBp8qkmyyLa6EnyGd5bSF0mM
+Content-Type: multipart/form-data; boundary=----boundary
+
+------boundary
+Content-Disposition: form-data; name="avatar"; filename="avatar.jpg"
+Content-Type: image/png
+
+avatar.png
+------boundary--
