@@ -27,15 +27,15 @@ Content-Type: application/json
 
 ### Profile Public Check
 GET http://localhost:3000/api/users/skander
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2QxMGM3NWViYmVmYmJiNTg5ODA5YSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3ODI0MDczMjYsImV4cCI6MTc4NDk5OTMyNn0.18XN6I6gIr3P6KsHysXjBp8qkmyyLa6EnyGd5bSF0mM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2Q2MTE0YTRhODhiOWE2OTFjZTAzNyIsImVtYWlsIjoidGVzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2thbmRlciIsImlhdCI6MTc4MjQyMTA1OSwiZXhwIjoxNzg1MDEzMDU5fQ.lJZ9m6jDraIuU5NvfaSKzYDcQyk-abDD6sBoET2mTUg
 
 ### Profile Private Check
 GET http://localhost:3000/api/users/me
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2QxMGM3NWViYmVmYmJiNTg5ODA5YSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3ODI0MDczMjYsImV4cCI6MTc4NDk5OTMyNn0.18XN6I6gIr3P6KsHysXjBp8qkmyyLa6EnyGd5bSF0mM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2Q2MTE0YTRhODhiOWE2OTFjZTAzNyIsImVtYWlsIjoidGVzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2thbmRlciIsImlhdCI6MTc4MjQyMTA1OSwiZXhwIjoxNzg1MDEzMDU5fQ.lJZ9m6jDraIuU5NvfaSKzYDcQyk-abDD6sBoET2mTUg
 
 ### Upload avatar
 POST http://localhost:3000/api/users/avatar
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2QxMGM3NWViYmVmYmJiNTg5ODA5YSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3ODI0MDczMjYsImV4cCI6MTc4NDk5OTMyNn0.18XN6I6gIr3P6KsHysXjBp8qkmyyLa6EnyGd5bSF0mM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2Q2MTE0YTRhODhiOWE2OTFjZTAzNyIsImVtYWlsIjoidGVzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2thbmRlciIsImlhdCI6MTc4MjQyMTA1OSwiZXhwIjoxNzg1MDEzMDU5fQ.lJZ9m6jDraIuU5NvfaSKzYDcQyk-abDD6sBoET2mTUg
 Content-Type: multipart/form-data; boundary=----boundary
 
 ------boundary
@@ -44,3 +44,13 @@ Content-Type: image/png
 
 avatar.png
 ------boundary--
+
+### Update Profile
+PUT http://localhost:3000/api/users/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2Q2MTE0YTRhODhiOWE2OTFjZTAzNyIsImVtYWlsIjoidGVzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2thbmRlciIsImlhdCI6MTc4MjQyMTA1OSwiZXhwIjoxNzg1MDEzMDU5fQ.lJZ9m6jDraIuU5NvfaSKzYDcQyk-abDD6sBoET2mTUg
+Content-Type: application/json
+
+{
+  "bio" : "I am Skander and I love web dev",
+  "username" : "Skandi"
+}

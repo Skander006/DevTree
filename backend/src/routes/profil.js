@@ -15,31 +15,43 @@ router.get('/me', protect, async (req,res)=>{
 });
 
 router.put('/me', protect, async (req,res)=>{
-    const user = User.findById(req.user.id);
+    const {username, bio} = req.body;
+    const user = await User.findByIdAndUpdate(
+        req.user.id,
+        {
+            username,
+            bio
+        },
+        {
+            new : true
+        }
+    );
     if(!user){
-        return res.status(404).json({error : "User not found !"});
+        return res.status(404).json({error : "User not found :"});
     }
-    if (req.body.username){
-        user.username = req.body.username;
-    }
-    if(req.body.bio){
-        user.bio = req.body.bio;
-    }
-    await user.save();
-    res.status(200).json(user);
+    res.status(200).json({
+        message : "Profile updated successfully !" ,
+        user
+    });
 });
 
 router.post('/avatar', protect, storage.single("avatar"), async (req,res)=>{
     try{
-        const user = await User.findById(req.user.id);
-        if(!user){
+        const user = await User.findByIdAndUpdate(
+            req.user.id,
+            {
+                avatar : req.file.filename
+            },
+            {
+                new : true
+            }
+        );
+        if (!user){
             return res.status(404).json({error : "User not found !"});
         }
-        user.avatar = req.file.filename;
-
-        return res.status(200).json({
-            message : "Avatar uploaded successfully !",
-            avatar : user.avatar
+        res.json({
+            message : "Avatar updated successfully !",
+            user
         });
     } catch(err){
         return res.status(500).json({error : err.message});
