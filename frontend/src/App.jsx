@@ -1,7 +1,7 @@
 import {BrowserRouter, Navigate, Routes, Route} from "react-router-dom";
 import AuthProvider, {useAuth} from "./contexts/authContext.jsx";
 import Login from "./pages/Login.jsx";
-import {Register} from "react-router-dom";
+import Register from "./pages/Register.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Profile from "./pages/Profile.jsx";
 
