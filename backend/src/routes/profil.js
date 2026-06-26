@@ -59,7 +59,7 @@ router.post('/avatar', protect, storage.single("avatar"), async (req,res)=>{
 });
 
 //public profile route
-router.get('/:username', protect, async (req,res)=>{
+router.get('/:username', async (req,res)=>{
     const username = req.params.username;
     const user = await User.findOne({username});
     if(!user){

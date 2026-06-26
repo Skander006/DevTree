@@ -54,3 +54,33 @@ Content-Type: application/json
   "bio" : "I am Skander and I love web dev",
   "username" : "Skandi"
 }
+
+
+###Link Post
+POST http://localhost:3000/api/links
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2Q2MTE0YTRhODhiOWE2OTFjZTAzNyIsImVtYWlsIjoidGVzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2thbmRlciIsImlhdCI6MTc4MjQyMTA1OSwiZXhwIjoxNzg1MDEzMDU5fQ.lJZ9m6jDraIuU5NvfaSKzYDcQyk-abDD6sBoET2mTUg
+Content-Type: application/json
+
+{
+  "title" : "instagram",
+  "url" : "instagram_url"
+}
+
+
+### Link Put
+PUT http://localhost:3000/api/links/6a3eaad9291d5536573a9e34
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2Q2MTE0YTRhODhiOWE2OTFjZTAzNyIsImVtYWlsIjoidGVzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2thbmRlciIsImlhdCI6MTc4MjQyMTA1OSwiZXhwIjoxNzg1MDEzMDU5fQ.lJZ9m6jDraIuU5NvfaSKzYDcQyk-abDD6sBoET2mTUg
+Content-Type: application/json
+
+{
+  "title" : "GitHub Link",
+  "url" : "Github_url.com"
+}
+
+### Link Delete
+DELETE http://localhost:3000/api/links/6a3eaad9291d5536573a9e34
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2Q2MTE0YTRhODhiOWE2OTFjZTAzNyIsImVtYWlsIjoidGVzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2thbmRlciIsImlhdCI6MTc4MjQyMTA1OSwiZXhwIjoxNzg1MDEzMDU5fQ.lJZ9m6jDraIuU5NvfaSKzYDcQyk-abDD6sBoET2mTUg
+
+### Link Get
+GET http://localhost:3000/api/links
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2Q2MTE0YTRhODhiOWE2OTFjZTAzNyIsImVtYWlsIjoidGVzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2thbmRlciIsImlhdCI6MTc4MjQyMTA1OSwiZXhwIjoxNzg1MDEzMDU5fQ.lJZ9m6jDraIuU5NvfaSKzYDcQyk-abDD6sBoET2mTUg
